@@ -1,0 +1,43 @@
+<!-- start banner Area -->
+<section class="relative about-banner">	
+    <div class="overlay overlay-bg"></div>
+    <div class="container">				
+      <div class="row d-flex align-items-center justify-content-center">
+        <div class="about-content col-lg-12">
+          <h1 class="text-white">
+            Edit profil				
+          </h1>	
+          <p class="text-white link-nav"><a [routerLink]="['/home']" routerLinkActive="router-link-active" >Home </a>  <span class="lnr lnr-arrow-right"></span>  <a > User</a>  <span class="lnr lnr-arrow-right"></span>  <a > Edit profil</a></p>
+        </div>	
+      </div>
+    </div>
+  </section>
+  <!-- End banner Area -->				  
+  
+  <!-- Start destinations Area -->
+  <section class="contact-page-area section-gap">
+    <div class="container">						
+      <div class="row">
+        <div class="map-wrap" id="map"></div>
+        <div class="col-lg-4 d-flex"></div>
+        <div class="col-lg-8">
+          <form *ngIf="user" class="form-area contact-form text-right" id="myForm">
+            <div class="row">	
+              <div class="col-lg-6 form-group">           
+                <input [(ngModel)]="user.firstname" name="firstname" class="common-input mb-20 form-control">            
+                <input [(ngModel)]="user.lastname" name="lastname" class="common-input mb-20 form-control">            
+                <input [(ngModel)]="user.email" name="email" class="common-input mb-20 form-control">
+                <input [(ngModel)]="user.profession" name="profession" class="common-input mb-20 form-control">
+                <button (click)="save()" class="genric-btn primary" style="float: right;">Save</button>	
+                <button (click)="goBack()" style="float: right;">Cancel</button>	
+              </div>
+              <div class="col-lg-6">									
+              </div>
+            </div>
+          </form>	
+        </div>
+      </div>
+    </div>	
+  </section>
+  <!-- End contact-page Area -->
+  

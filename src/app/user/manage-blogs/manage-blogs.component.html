@@ -1,0 +1,50 @@
+	<!-- start banner Area -->
+  <section class="about-banner relative">
+      <div class="overlay overlay-bg"></div>
+      <div class="container">				
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="about-content col-lg-12">
+            <h1 class="text-white">
+              Manage blogs				
+            </h1>	
+            <p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="hotels.html"> Hotels</a></p>
+          </div>	
+        </div>
+      </div>
+    </section>
+    <!-- End banner Area -->	
+  
+  
+    <div class="widget-wrap">
+      <br><br><br>							
+      <div class="whole-wrap">
+        <div class="container">  
+          <div class="section-top-border">
+            <h3 class="mb-30">Blogs</h3>
+            <div class="progress-table-wrap">
+              <div class="progress-table">
+                <div class="table-head">
+                  <div class="id">#</div>
+                  <div class="date">Date</div>
+                  <div class="date">Author</div>
+                  <div class="title">Title</div>
+                  <div class="percentage"></div>
+                </div>
+                <div class="table-row" *ngFor="let blog of blogs$">
+                  <div class="id">{{blog.id}}</div>
+                  <div class="date">{{blog.date}}</div>
+                  <div class="date">{{blog.author}}</div>
+                  <div class="title">{{blog.title}}</div>
+                  <div class="percentage">
+                    <a [routerLink]="['./edit-blog', blog.id]" routerLinkActive="router-link-active"  class="genric-btn warning">Edit</a>
+                    <a (click)="delete(blog)" class="genric-btn danger">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <button [routerLink]="['./post-blog']" routerLinkActive="router-link-active"  class="genric-btn info e-large" style="float: right;">Post blog</button>		              
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,70 @@
+<header id="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-sm-6 col-6 header-top-left">
+          <ul>
+            <li>
+              <a [routerLink]="['/signup']" *ngIf="!authService.isLoggedIn"
+                >Sign Up</a
+              >
+            </li>
+            <li>
+              <a
+                [routerLink]="['/']"
+                (click)="login()"
+                *ngIf="!authService.isLoggedIn"
+                >Login</a
+              >
+            </li>
+            <li>
+              <a
+                [routerLink]="['/']"
+                (click)="logout()"
+                *ngIf="authService.isLoggedIn"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-6 header-top-right">
+          <div class="header-social">
+            <a href="facebook.com"><i class="fa fa-facebook"></i></a>
+            <a href="twitter.com"><i class="fa fa-twitter"></i></a>
+            <a href="dribbble.com"><i class="fa fa-dribbble"></i></a>
+            <a href="behance.com"><i class="fa fa-behance"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container main-menu">
+    <div class="row align-items-center justify-content-between d-flex">
+      <div id="logo">
+        <a [routerLink]="['/home']"
+          ><img src="assets/img/logo.png" alt="" title=""
+        /></a>
+      </div>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a [routerLink]="['/home']">Home</a></li>
+          <li><a [routerLink]="['/about']">About</a></li>
+          <li><a [routerLink]="['/package']">Packages</a></li>
+          <li><a [routerLink]="['/hotels']">Hotels</a></li>
+          <li><a [routerLink]="['/blog-home']">Blog</a></li>
+          <li><a [routerLink]="['/contact']">Contact</a></li>
+          <li>
+            <a
+              [routerLink]="['/user']"
+              *ngIf="authService.isLoggedIn"
+              style="color:yellow"
+              >Account</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!-- #nav-menu-container -->
+    </div>
+  </div>
+</header>
+<!-- #header -->
